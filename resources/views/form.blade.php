@@ -43,7 +43,7 @@
                                 เนื้อหาบทความ
                             </label>
 
-                            <textarea name="content"
+                            <textarea id="content" name="content"
                                 class="form-control"
                                 rows="7"
                                 placeholder="กรอกเนื้อหาบทความ">{{ old('content') }}</textarea>

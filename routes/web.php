@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\BlogController;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',[BlogController::class,'index']);
+Route::get('detail/{id}',[BlogController::class,'detail']);
+
 Route::get('about', function () {
     return view('about');
 });

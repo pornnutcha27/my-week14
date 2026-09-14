@@ -4,10 +4,16 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-        <h1 class="display-6">ยินดีต้อนรับสู่ Blog Application</h1>
-        <p class="lead mb-0">ระบบสำหรับอ่านและจัดการบทความ โดยผู้ใช้สามารถเขียน แก้ไข และเผยแพร่บทความได้หลังเข้าสู่ระบบ</p>
-    </div>
+<div class="container px-4">
+<h2>บทความล่าสุด</h2>
+<hr>
+@foreach ($blogs as $item)
+<article class="mb-4 pb-3">
+<h2>{{$item->title}}</h2>
+ <p>{{ Str::limit(strip_tags($item->content), 100) }}</p>
+<a href="/detail/{{$item->id}}">อ่านเพิ่มเติม</a>
+</article>
+@endforeach
+<hr>
 </div>
 @endsection
